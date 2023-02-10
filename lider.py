@@ -97,7 +97,7 @@ if st.button("Calcular Premiação"):
         elif fat < 2000000:
             fatp = 0    
 
-        prem = ((inc/1000000)*600)+((fat/1000000)*7500)
+        prem = ((inc/1000000)*600)+((fat/1000000)*30000)
         #Faturamento final que será visto
         prems = (prem*tx)
 
