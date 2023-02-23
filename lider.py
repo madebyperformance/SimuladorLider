@@ -18,7 +18,7 @@ fat2 = fat2.replace(",",".")
 st.caption(f"Faturamento total Selecionada: R$ {fat2}")
 
 input_ROA=st.number_input("ROA médio do ano da Filial")
-Expan=st.number_input("Expansão total da Filial")
+Expan=st.number_input("Expansão total da Filial",format="%.0f")
 
 if st.button("Calcular Premiação"):
 
