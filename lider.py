@@ -18,6 +18,7 @@ fat2 = fat2.replace(",",".")
 st.caption(f"Faturamento total Selecionada: R$ {fat2}")
 
 input_ROA=st.number_input("ROA médio do ano da Filial")
+Expan=st.number_input("Expansão total da Filial")
 
 if st.button("Calcular Premiação"):
 
@@ -118,13 +119,22 @@ if st.button("Calcular Premiação"):
             pcroa = (prems*0.25)
         elif input_ROA < 0.30:
             pcroa = (prems*0)
+            
+        #Variante da Expansao
+        if Expan >= 30:
+            pcexp = 50000
+        elif Expan >= 20 and Expan < 30:
+            pcexp = 25000
+        elif Expan >= 10 and Expan < 20:
+            pcexp = 10000
+        elif Expan < 10:
+            pcexp = 0
 
 
-
-        premf = (incp)+(fatp)+prems+pcroa
-        premf2 = (incp)+(fatp)+prems+pcroa+kpi2
-        premf3 = (incp)+(fatp)+prems+pcroa+kpi3
-        premf4 = (incp)+(fatp)+prems+pcroa+kpi4
+        premf = (incp)+(fatp)+prems+pcroa+pcexp
+        premf2 = (incp)+(fatp)+prems+pcroa+kpi2+pcexp
+        premf3 = (incp)+(fatp)+prems+pcroa+kpi3+pcexp
+        premf4 = (incp)+(fatp)+prems+pcroa+kpi4+pcexp
         
         #Ajustar formatação
         premf="{:,.0f}".format(premf) 
@@ -163,11 +173,14 @@ if st.button("Calcular Premiação"):
 
         pcroa="{:,.0f}".format(pcroa) 
         pcroa = pcroa.replace(",",".")
+        
+        pcexp="{:,.0f}".format(pcexp) 
+        pcexp = pcexp.replace(",",".")
 
         tx="{:.0%}".format(tx) 
 
         #Tabela    
-        valores = [["Premiação Faturamento",fatp,fatp,fatp,fatp],["Premiação Incremento",incp,incp,incp,incp],["% de Premiação do AAI",tx,tx,tx,tx],["Premiação EquityBack",prems,prems,prems,prems],["Adicional ROA",pcroa,pcroa,pcroa,pcroa],["Adicional KPI Global",kpi1,kpi2,kpi3,kpi4],["Premiação Final",premf,premf2,premf3,premf4]]
+        valores = [["Premiação Faturamento",fatp,fatp,fatp,fatp],["Premiação Incremento",incp,incp,incp,incp],["% de Premiação do AAI",tx,tx,tx,tx],["Premiação EquityBack",prems,prems,prems,prems],["Adicional ROA",pcroa,pcroa,pcroa,pcroa],["Adicional Expansão",pcexp,pcexp,pcexp,pcexp],["Adicional KPI Global",kpi1,kpi2,kpi3,kpi4],["Premiação Final",premf,premf2,premf3,premf4]]
         df = pd.DataFrame(valores,columns=['KPI','Meta Global <80%','Meta Global >80%','Meta Global >90%','Meta Global >100%'])
 
         st.caption(f"Premiações mostradas abaixo estão em Reais por ações da Companhia.")
