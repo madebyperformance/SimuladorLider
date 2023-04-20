@@ -82,29 +82,47 @@ if st.button("Calcular Premiação"):
 
         if inc >= 300000000:
             incp = 0.2
+            incp2 = 60000
         elif inc >= 200000000 and inc < 300000000:
             incp = 0.1
+            incp2 = 40000
         elif inc >= 100000000 and inc < 200000000:
             incp = 0.05
+            incp2 = 20000
         elif inc < 100000000:
             incp = 0    
+            incp2 = 0
             
         if fat >= 4000000:
             fatp = 0.3
+            fatp2 = 80000
         elif fat >= 3000000 and fat < 4000000:
             fatp = 0.2
+            fatp2 = 60000
         elif fat >= 2000000 and fat < 3000000:
             fatp = 0.1
+            fatp2 = 40000
         elif fat < 2000000:
             fatp = 0    
-
+            fatp2 = 0
+            
         prem = ((inc/1000000)*600)+((fat/1000000)*20000)
         #Faturamento final que será visto
         prems = (prem*tx)
 
         fatp = prems*fatp
         incp = prems*incp
-     
+        
+        if fatp >= fatp2:
+            fatp = fatp
+        elif fatp < fatp2:
+            fatp = fatp2
+       
+        if incp >= incp2:
+            incp = incp
+        elif incp < incp2:
+            incp = incp2
+            
         kpi1 = 0
         kpi2 = (prems*0.25)
         kpi3 = (prems*0.75)
