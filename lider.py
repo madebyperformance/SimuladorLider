@@ -19,7 +19,7 @@ st.markdown('<div style="position: fixed; bottom: 0; right: 100px;"><p style="co
 st.markdown('<div style="position: fixed; bottom: 0; right: 1420px;"><p style="color: grey; font-size: 14px;font-family: Barlow;">Criado por Pedro Dantas</p></div>', unsafe_allow_html=True)
 
 def link():
-    st.sidebar.markdown("<a href='https://madebyperformance-simulador-g10s10-simuladorg10s10-83xtig.streamlit.app/' target='_blank' style='text-decoration: none; font-family: Barlow; font-weight: bold; font-size: 22px; color: white;'>SIMULADOR TOP50</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("<a href='https://madebyperformance-simulador-g10s10-simuladorg10s10-83xtig.streamlit.app/' target='_blank' style='text-decoration: none; font-family: Barlow; font-weight: bold; font-size: 22px; color: white;'>SIMULADOR G10 E S10</a>", unsafe_allow_html=True)
     st.sidebar.markdown("<span style='font-family: Barlow; color: white; font-size: 14px;'>Clique acima para ser redirecionado ao Simulador do G10 e S10.</span>", unsafe_allow_html=True)
 
 link()
