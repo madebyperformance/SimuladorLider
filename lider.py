@@ -24,7 +24,7 @@ def link():
 
 link()
 
-st.title('Simulador do Partnership 2023 - Líder')
+st.title('Simulador Partnership Líder')
 st.caption("Use este simulador para calcular quanto de premiação você poderá receber ao final do ano. Importante frisar que a premiação é calculada em cima de valores preenchidos por você, devem ser considerados como uma aproximação.")
 
 aai=st.number_input("Quanto Assessores premiados?",format="%.0f")
