@@ -5,6 +5,7 @@ from PIL import Image
 
 #Importar logo
 im = Image.open(r'logo.png')
+im2 = Image.open(r'foguete.png')
 
 # Define as cores da página
 st.set_page_config(
