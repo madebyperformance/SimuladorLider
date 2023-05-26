@@ -1,6 +1,16 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
+
+#Importar logo
+im = Image.open(r'logo.png')
+
+# Define as cores da página
+st.set_page_config(
+    page_title='Simulador Partnership Líder',
+    page_icon=im,
+    layout='wide')
 
 st.title('Simulador do Partnership 2023 - Líder')
 st.caption("Use este simulador para calcular quanto de premiação você poderá receber ao final do ano. Importante frisar que a premiação é calculada em cima de valores preenchidos por você, devem ser considerados como uma aproximação.")
