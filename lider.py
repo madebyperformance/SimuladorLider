@@ -40,17 +40,17 @@ fat_m3 = fat_m3.replace(",",".")
 fat_m4 = fat_m4.replace(",",".")
 
 st.caption(f"Objetivo Faturamento Mínimo: R$ {fat_m2}")
-st.caption(f"Objetivo Faturamento Mínimo: R$ {fat_m3}")
-st.caption(f"Objetivo Faturamento Mínimo: R$ {fat_m4}")
+st.caption(f"Objetivo Faturamento Médio: R$ {fat_m3}")
+st.caption(f"Objetivo Faturamento Máximo: R$ {fat_m4}")
 
 #fat feito
-fat=st.number_input("Faturamento total do ano da Filial",format="%.0f")
+fat=st.number_input("Faturamento Mês",format="%.0f")
 fat2="{:,.0f}".format(fat) 
 fat2 = fat2.replace(",",".")
 st.caption(f"Faturamento total Selecionada: R$ {fat2}")
 
 #incremento
-inc=st.number_input("Incremento total do ano da Filial",format="%.0f")
+inc=st.number_input("Incremento Mês",format="%.0f")
 inc2="{:,.0f}".format(inc) 
 inc2 = inc2.replace(",",".")
 st.caption(f"Incremento total Selecionada: R$ {inc2}")
