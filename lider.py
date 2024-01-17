@@ -74,15 +74,9 @@ if st.button("Calcular Premiação"):
     elif fat < fat_m:
         fatp = 0
         #premiação incremento:
-        if inc >= 5000000:
-            incp = (inc/1000000)*500
-        elif inc >= 3000000 and inc < 5000000:
-            incp = (inc/1000000)*375
-        elif inc >= 2000000 and inc < 3000000:
-            incp = (inc/1000000)*250
-        elif inc >= 1000000 and inc < 2000000:
-            incp = (inc/1000000)*125
-        elif inc > 2000000:
+        if inc >= 3000000:
+            incp = (inc/1000000)*100
+        elif inc < 3000000:
             incp = 0
             
     premf = (fatp+incp)
