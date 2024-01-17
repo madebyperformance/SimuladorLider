@@ -60,37 +60,57 @@ nps=st.number_input("NPS Aniversário dos últimos 6 meses:")
 
 #Calculando premiação
 if st.button("Calcular Premiação"):
-
-    #premiação Fat:
-    if fat >= fat_max:
-        fatp = (fat/1000000)*40000
-        incp = 0
-    elif fat >= fat_med and fat < fat_max:
-        fatp = (fat/1000000)*30000
-        incp = 0
-    elif fat >= fat_m and fat < fat_med:
-        fatp = (fat/1000000)*20000
-        incp = 0
-    elif fat < fat_m:
-        fatp = 0
-        #premiação incremento:
-        if inc >= 3000000:
-            incp = (inc/1000000)*100
-        elif inc < 3000000:
+    if nps >=85:
+        #premiação Fat:
+        if fat >= fat_max:
+            fatp = (fat/1000000)*40000
             incp = 0
-            
-    premf = (fatp+incp)
-
-    premf="{:,.0f}".format(premf) 
-    premf = premf.replace(",",".")
+        elif fat >= fat_med and fat < fat_max:
+            fatp = (fat/1000000)*30000
+            incp = 0
+        elif fat >= fat_m and fat < fat_med:
+            fatp = (fat/1000000)*20000
+            incp = 0
+        elif fat < fat_m:
+            fatp = 0
+            #premiação incremento:
+            if inc >= 3000000:
+                incp = (inc/1000000)*100
+            elif inc < 3000000:
+                incp = 0
+                
+        premf = (fatp+incp)
     
-    incp="{:,.0f}".format(incp) 
-    incp = incp.replace(",",".")
-    
-    fatp="{:,.0f}".format(fatp) 
-    fatp = fatp.replace(",",".")
+        premf="{:,.0f}".format(premf) 
+        premf = premf.replace(",",".")
         
-    valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["Premiação Final",premf]]
-    df = pd.DataFrame(valores,columns=['KPI','R$ em Opções de Ações'])
+        incp="{:,.0f}".format(incp) 
+        incp = incp.replace(",",".")
+        
+        fatp="{:,.0f}".format(fatp) 
+        fatp = fatp.replace(",",".")
+            
+        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["Premiação Final",premf]]
+        df = pd.DataFrame(valores,columns=['KPI','R$ em Opções de Ações'])
+    
+        st.dataframe(df) 
+    elif nps <85:
+        #premiação Fat:
+        fatp = 0
+        incp = 0      
+        premf = 0
+    
+        premf="{:,.0f}".format(premf) 
+        premf = premf.replace(",",".")
+        
+        incp="{:,.0f}".format(incp) 
+        incp = incp.replace(",",".")
+        
+        fatp="{:,.0f}".format(fatp) 
+        fatp = fatp.replace(",",".")
+            
+        valores = [["Premiação Faturamento",fatp],["Premiação Incremento",incp],["Premiação Final",premf]]
+        df = pd.DataFrame(valores,columns=['KPI','R$ em Opções de Ações'])
+    
+        st.dataframe(df) 
 
-    st.dataframe(df) 
