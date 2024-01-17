@@ -68,10 +68,10 @@ if st.button("Calcular Premiação"):
     elif fat >= fat_med and fat < fat_max:
         fatp = (fat/1000000)*30000
         incp = 0
-    elif ifat >= fat_m and fat < fat_med:
+    elif fat >= fat_m and fat < fat_med:
         fatp = (fat/1000000)*20000
         incp = 0
-    elif inc > fat_m:
+    elif fat > fat_m:
         fatp = 0
         #premiação incremento:
         if inc >= 5000000:
