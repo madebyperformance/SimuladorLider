@@ -95,6 +95,7 @@ if st.button("Calcular Premiação"):
     
         st.dataframe(df) 
     elif nps <85:
+        st.caption("<span style='color:red; font-weight:bold;'>Caso seu NPS seja menor que 85, sua premiação é zerada.</span>", unsafe_allow_html=True)
         #premiação Fat:
         fatp = 0
         incp = 0      
