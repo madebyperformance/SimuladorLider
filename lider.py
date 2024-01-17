@@ -56,7 +56,7 @@ inc2 = inc2.replace(",",".")
 st.caption(f"Incremento total Selecionada: R$ {inc2}")
 
 #NPS
-nps=st.number_input("NPS Aniversário dos últimos 6 meses:")
+nps=st.number_input("NPS Aniversário dos últimos 6 meses:",format="%.0f")
 
 #Calculando premiação
 if st.button("Calcular Premiação"):
